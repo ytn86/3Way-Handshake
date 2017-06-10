@@ -35,7 +35,7 @@ def handshake(targetIP, targetPort):
     payload = "hello"
     #payload = "GET /\n\n"
     tcpLayer3 = scapy.TCP(sport=sport, dport=targetPort, flags='PA', seq=seqNum+1, ack=p.seq+1)
-    p = scapy.sr1(ipLayer/tcpLayer3/payload, inter=0.01)
+    p = scapy.sr1(ipLayer/tcpLayer3/payload)
     print(p.show())
 
 
